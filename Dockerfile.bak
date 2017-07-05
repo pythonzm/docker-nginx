@@ -34,9 +34,6 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 		--with-http_geoip_module=dynamic \
 		--with-threads \
 		--with-stream \
-		--with-pcre=/usr/lib64 \
-		--with-openssl=/usr/lib \
-		--with-zlib=/usr/lib64 \
 		--with-stream_ssl_module \
 		--with-stream_ssl_preread_module \
 		--with-stream_realip_module \
@@ -54,22 +51,23 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 		gcc \
 		libc-devel \
 		make \
-		openssl \
 		openssl-devel \
-		pcre \
+		openssl \
 		pcre-devel \
+		pcre \
 		zlib \
 		zlib-devel \
 		curl \
 		gnupg \
 		libxslt \
-		libxslt-devel \
-		libxml2 \
-		libxml2-devel \
-		gd-devel \
-		GeoIP \
-		GeoIP-devel \
-		GeoIP-data \
+        	libxslt-devel \
+        	libxml2 \
+        	libxml2-devel \
+        	gd-devel \
+        	GeoIP \
+        	GeoIP-devel \
+        	GeoIP-data \
+        	iproute \
 	&& curl -fSL http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz -o nginx.tar.gz \
 	&& curl -fSL http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz.asc  -o nginx.tar.gz.asc \
 	&& export GNUPGHOME="$(mktemp -d)" \
